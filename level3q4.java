@@ -1,35 +1,27 @@
 import java.util.Scanner;
 
-public class level3q4 {
+public class PrimeNumber {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
 
-        // User inputs
-        String name = sc.nextLine();
-        String fromCity = sc.nextLine();
-        String viaCity = sc.nextLine();
-        String toCity = sc.nextLine();
+        boolean isPrime = true;
 
-        double fromToVia = sc.nextDouble();       // distance in miles
-        double viaToFinalCity = sc.nextDouble();  // distance in miles
+        if (number <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
 
-        int timeFromToVia = sc.nextInt();         // time in minutes
-        int timeViaToFinalCity = sc.nextInt();    // time in minutes
-
-        // Distance calculation
-        double totalDistanceMiles = fromToVia + viaToFinalCity;
-        double totalDistanceKm = totalDistanceMiles * 1.60934;
-
-        // Time calculation
-        int totalTime = timeFromToVia + timeViaToFinalCity;
-
-        // Output
-        System.out.println("The Total Distance travelled by " + name + 
-                " from " + fromCity + " to " + toCity + " via " + viaCity +
-                " is " + totalDistanceKm + " km and the Total Time taken is " +
-                totalTime + " minutes");
-
-        sc.close();
+        if (isPrime) {
+            System.out.println("Prime Number");
+        } else {
+            System.out.println("Not a Prime Number");
+        }
     }
 }
