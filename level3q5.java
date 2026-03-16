@@ -1,22 +1,35 @@
 import java.util.Scanner;
 
-public class level3q5 {
+public class ArmstrongNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // Input
-        System.out.print("Enter first number: ");
-        int number1 = sc.nextInt();
+        // Step 1: Get input number
+        System.out.print("Enter a number: ");
+        int number = sc.nextInt();
 
-        System.out.print("Enter second number: ");
-        int number2 = sc.nextInt();
+        // Step 2: Initialize variables
+        int sum = 0;
+        int originalNumber = number;
 
-        // Swapping
-        int temp = number1;
-        number1 = number2;
-        number2 = temp;
+        // Step 3: Use while loop until originalNumber becomes 0
+        while (originalNumber != 0) {
 
-        // Output
-        System.out.println("The swapped numbers are " + number1 + " and " + number2);
+            // Step 4: Find last digit using modulus
+            int digit = originalNumber % 10;
+
+            // Step 5: Find cube of the digit and add to sum
+            sum = sum + (digit * digit * digit);
+
+            // Step 6: Remove the last digit using division
+            originalNumber = originalNumber / 10;
+        }
+
+        // Step 7: Check if Armstrong or not
+        if (sum == number) {
+            System.out.println(number + " is an Armstrong number.");
+        } else {
+            System.out.println(number + " is not an Armstrong number.");
+        }
     }
 }
