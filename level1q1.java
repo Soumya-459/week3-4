@@ -1,9 +1,15 @@
-import java.util.*;
+import java.util.*
 public class level1q1{
 
          public static void main(String[] args){
-                  int birthyear=2000;
-                  int currentyear=2024;
-                  int age= currentyear-birthyear;
-                  System.out.println("Harry's age in 2024 is" + age);
-}}
+Scanner sc = new Scanner(System.in);
+		System.out.println(“enter a number”);
+		int n = sc.nextInt();
+		int d=n/10;
+		if (n==0 || n==5){
+			System.out.println(“divisible”);
+		else{
+			System.out.println(“NOT DIVISIBLE”);
+		sc.close();
+}
+}
