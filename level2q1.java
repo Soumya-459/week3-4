@@ -1,25 +1,21 @@
 import java.util.Scanner;
 
-public class level2q1 {
+public class OddEvenNumbers {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
 
-        // Taking user input
-        float number1 = sc.nextFloat();
-        float number2 = sc.nextFloat();
+        if (number <= 0) {
+            System.out.println("Not a Natural Number");
+            return;
+        }
 
-        // Arithmetic operations
-        float addition = number1 + number2;
-        float subtraction = number1 - number2;
-        float multiplication = number1 * number2;
-        float division = number1 / number2;
-
-        // Output
-        System.out.println("The addition, subtraction, multiplication, and division value of 2 numbers "
-                + number1 + " and " + number2 + " is "
-                + addition + ", " + subtraction + ", " + multiplication + ", and " + division);
-
-        sc.close();
+        for (int i = 1; i <= number; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i + " is Even");
+            } else {
+                System.out.println(i + " is Odd");
+            }
+        }
     }
 }
